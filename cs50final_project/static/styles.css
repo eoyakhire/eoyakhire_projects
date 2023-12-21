@@ -1,0 +1,95 @@
+body {
+    background-color: #F79AC0;
+    /* background-video: url("glitch.mp4")!important; */
+    background-image: url("https://w0.peakpx.com/wallpaper/136/120/HD-wallpaper-powerpuff-girl-beautiful-black-girl-cool-curly-hair-melanin-nature-pink-pretty-witch.jpg");
+    background-repeat: no-repeat;
+    width: 100%!important;
+    background-size: cover;
+    /*color: #FFFFFF;*/
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    margin: 0;
+    text-align: center;
+}
+
+.bg {
+
+    background-color: #F79AC0;
+    /* background-video: url("glitch.mp4")!important; */
+    /*background-size: cover;*/
+    /*color: #FFFFFF;*/
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    margin: 10;
+    text-align: center;
+}
+
+.container {
+    margin-left: 100;
+    margin-right: 100;
+    padding-left: 15px;
+    padding-right: 70px;
+    margin-top: 20px;
+    margin-right: 21px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.header {
+
+    background-image: url("/static/rapper.png");
+    background-repeat: no-repeat, repeat;
+    background-color: #9751b0;
+    text-align: center;
+    margin-bottom: 5rem;
+    padding: 4rem 2rem;
+}
+
+.section {
+    padding: 0.5rem 2rem 1rem 2rem;
+    text-align: right;
+    bottom: 0px;
+    font-family: 'Press Start 2P';
+    color: #F79AC0;
+}
+
+h1 {
+    font-family: 'Press Start 2P';
+    font-size: 48px;
+    color: #F79AC0;
+
+}
+
+h2 {
+    font-family: 'Yellowtail';
+    font-size: 48px;
+    color: #FFFFFF;
+}
+
+button, input[type="submit"] {
+    background-color: #9472a3;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+    font-size: 0.95rem;
+    font-weight: 1000;
+    line-height: 1.5;
+    padding: 0.375rem 0.75rem;
+    text-align: right;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    vertical-align: middle;
+}
+
+input[type="text"] {
+    line-height: 1.8;
+    width: 25%;
+    font-family: 'Press Start 2P';
+    color: #F79AC0;
+}
+
+input[type="text"]:hover {
+    background-color: #f5f5f5;
+    transition: color 2s ease-in-out, background-color 0.15s ease-in-out;
+}
