@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href='https://fonts.googleapis.com/css?family=Zen Dots' rel='stylesheet'>
+
+    <link href="/static/styles.css" rel="stylesheet">
+    <title>The Last of Venus</title>
+
+</head>
+<body>
+    <div class="container">
+        <h1>The Last of Venus</h1>
+        <h2>Input Image</h2>
+        <img src="{{ input_image }}" alt="Input Image" width="300">
+        
+        <h2>Output Image</h2>
+        <img src="{{ url_for('uploaded_file', filename='output_image.jpg') }}" alt="Output Image" width="300">
+        <form action="/" method="get">
+            <button type="submit">Upload Another Image</button>
+        </form>
+    </div>
+</body>
+</html>

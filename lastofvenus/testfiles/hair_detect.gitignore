@@ -1,0 +1,46 @@
+import tensorflow as tf
+import tensorflow_hub as hub
+import ssl
+
+# Disable SSL verification (not recommended for production)
+ssl._create_default_https_context = ssl._create_unverified_context
+
+# Replace this with the URL to the CenterNet HourGlass104 512x512 model on TensorFlow Hub
+model_url = "https://tfhub.dev/tensorflow/centernet/hourglass_1024x1024/1"
+
+# Load the pre-trained model
+model = hub.load(model_url) 
+
+# Define the function to preprocess the image
+def preprocess_image(image_path):
+    img = cv2.imread(image_path)
+    img = cv2.resize(img, (300, 300))  # Resize to match the model's expected sizing
+    img = img[..., ::-1]  # BGR to RGB
+    return img
+
+# Define the function to make predictions
+def predict_hair(image_path):
+    input_image = preprocess_image(image_path)
+    input_tensor = tf.convert_to_tensor([input_image], dtype=tf.float32)
+        
+    detections = model(input_tensor)
+
+    # Extract the bounding boxes and labels
+    boxes = detections['detection_boxes'][0].numpy()
+    scores = detections['detection_scores'][0].numpy()
+    labels = detections['detection_classes'][0].numpy()
+
+    # Display or process the results
+    for i in range(len(boxes)):
+        if scores[i] > 0.5:  # Confidence threshold
+            box = boxes[i]
+            ymin, xmin, ymax, xmax = box
+            # Extract the region of interest (ROI) containing hair
+            hair_roi = input_image[int(ymin * 300):int(ymax * 300), int(xmin * 300):int(xmax * 300)]
+
+            # Process the hair_roi as needed
+            # For example, you can save the detected hair region
+            cv2.imwrite("detected_hair.jpg", hair_roi)
+
+# Example usage
+predict_hair("images/anime.png")
