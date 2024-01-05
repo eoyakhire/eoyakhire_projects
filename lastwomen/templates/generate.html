@@ -1,0 +1,26 @@
+{% extends "index.html" %} {% block title %} AI Image Generator {% endblock %} {% block content %}
+
+    <form action="/generate" method="post">
+    <body>
+        <div class="split-container">
+            <div class="image-side">
+        <section class="images-section"></section>
+        <section class="bottom-section">
+            <section class="input-container">
+                <input/>
+                <div id="submit-icon"></div>
+            </section>
+        </section>
+     </div>
+    <div class="text-side">
+        <h1>AI Image Generator</h1>
+        <p>
+            Unleash your creativity with Last Women on Earth's cutting-edge AI Image Generator! Transform your ideas into 
+            captivating visual art as you harness the power of artificial intelligence. Dive into a world where every stroke of 
+            imagination comes to life, and let our AI Image Generator be the canvas for your boundless artistic expression.
+        </p>
+    </div>
+    </div>
+    </body>
+</form>
+{% endblock %}

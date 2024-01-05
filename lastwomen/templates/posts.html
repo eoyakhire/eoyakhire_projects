@@ -1,0 +1,28 @@
+{% extends "index.html" %} {% block title %} Make a Post {% endblock %} 
+
+{% block content %}
+    <form action="/posts" method="post">
+        <body style="background-color: black; color: white;">
+            <h1>Create a Post</h1>
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    <div class="flash-messages">
+                        {% for message in messages %}
+                            <div class="flash-message">{{ message }}</div>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            {% endwith %}
+            <form method="POST">
+                {{ form.hidden_tag() }}
+                <label for="title">Title:</label>
+                {{ form.title(class="form-control") }}
+                <label for="content">Content:</label>
+                {{ form.content(class="form-control") }}
+                <label for="visibility">Visibility:</label>
+                {{ form.visibility(class="form-control") }}
+                <button type="submit">Submit</button>
+            </form>
+        </body>
+    </form>
+{% endblock %}

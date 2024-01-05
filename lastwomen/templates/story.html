@@ -1,0 +1,29 @@
+{% extends "index.html" %} {% block title %} Create a Post{% endblock %} 
+
+{% block content %}
+<form action="/story" method="post">
+
+    <body style="background-color: black; color: white;">
+        <div class="split-container">
+            <div class="image-side">
+                <img src="/static/art.png" alt="img6">
+            </div>
+            <div class="text-side">
+                <h1>SHARE YOUR VOICE!</h1>
+                <p>
+                    At Last Women on Earth, we believe in the power of diverse voices and unique stories. We invite you to be a part of our vibrant community by sharing your thoughts, experiences, and creativity through storytelling and articles.
+                    <br>
+                    Whether you have a personal story to tell, a thought-provoking article to write, or an inspiring piece of poetry, your voice matters here. Let your words resonate and contribute to a space that celebrates individuality and fosters connection.
+                    <br>
+                    Creating a post is easy! Click on the "Create Post" button, pour your heart into your writing, and choose whether you want to share it with the world or keep it private. 
+                </p>
+                {% for post in posts %}
+                    <div class="post">
+                        <h3>{{ post.title }}</h3>
+                        <p>{{ post.content }}</p>
+                    </div>
+                {% endfor %}
+                <a href="{{ url_for('posts') }}">Create a Post</a>
+    </body>
+</form>
+{% endblock %}
